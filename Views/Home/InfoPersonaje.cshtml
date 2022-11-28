@@ -1,0 +1,22 @@
+@{
+    ViewData["Title"] = "InfoPersonajes";
+}
+<div class="text-center">
+<h1 class="display-1">@ViewBag.Personaje.Nombre</h1>
+<a href='@Url.Action("AgregarSkin","Home", new {Id = @ViewBag.Personaje.IdPersonaje})' class="btn btn-primary">Agregar Skin</a>
+</div>
+<br>
+<div class="row row-cols-md-3 g-4">
+    @foreach (Skins i in ViewBag.ListaSkins){
+    <div class="col">
+        <div class="card">
+            <img src="@i.Foto" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">@i.Nombre</h5>
+                <a href='@Url.Action("InfoSkin","Home", new {Id = @i.IdSkin})' class="btn btn-primary">Ver info skin</a>
+                <a href='@Url.Action("EliminarSkin","Home", new {IdSkin = @i.IdSkin, IdPersonaje = @ViewBag.Personaje.IdPersonaje})' class="btn btn-primary">Eliminar skin</a>
+            </div>
+        </div>
+    </div>
+    }
+</div>

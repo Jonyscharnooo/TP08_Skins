@@ -1,0 +1,19 @@
+@{
+    ViewData["Title"] = "Personajes";
+}
+<div class="text-center">
+<h1>Lista de personajes</h1>
+</div>
+<div class="row row-cols-md-3 g-4">
+    @foreach (Personajes i in ViewBag.ListaPersonajes){
+    <div class="col">
+        <div class="card">
+            <img src="@i.Foto" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">@i.Nombre</h5>
+                <a href='@Url.Action("InfoPersonaje","Home", new {Id = @i.IdPersonaje})' class="btn btn-primary">Ver aspectos</a>
+            </div>
+        </div>
+    </div>
+    }
+</div>

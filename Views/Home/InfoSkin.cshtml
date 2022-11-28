@@ -1,0 +1,16 @@
+@{
+    ViewData["Title"] = "InfoSkin";
+}
+<br>
+<a href='@Url.Action("InfoPersonaje","Home", new {Id = @ViewBag.Skin.IdPersonaje})' class="btn btn-primary">Volver</a>
+<br>
+<br>
+<div class="card mb-3">
+  <img src="@ViewBag.Skin.Foto" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">@ViewBag.Skin.Nombre</h5>
+        <p class="card-text">Precio: @ViewBag.Skin.Precio</p>
+        <p class="card-text">Categoría: @ViewBag.Skin.Categoria</p>
+        <p class="card-text"><small>Fecha de creación: @ViewBag.Skin.Creacion</small></p>
+    </div>
+</div>

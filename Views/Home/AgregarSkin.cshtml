@@ -1,0 +1,24 @@
+@{
+    ViewData["Title"] = "AgregarSkin";
+}
+<div class="mx-auto text-center col-6">
+    <div class="card">
+        <h4 class="card-header">Ingresa tu propia skin</h4>
+        <div class="card-body">
+            <form action='@Url.Action("GuardarSkin")' method="post" enctype="multipart/form-data">
+                <h6 class="card-text">Nombre</h6>
+                <input type="text" name="Nombre" required><br><br>
+                <h6 class="card-text">Foto</h6>
+                <input type="url" name="Foto" required><br><br>
+                <h6 class="card-text">Precio</h6>
+                <input type="number" name="Precio" required><br><br>
+                <h6 class="card-text">Categoría</h6>
+                <input type="text" name="Categoria" required><br><br>
+                <h6 class="card-text">Fecha de creación</h6>
+                <input type="date" name="Creacion" required><br><br>
+                <input type="hidden" name="IdPersonaje" value="@ViewBag.Personaje.IdPersonaje">
+                <input type="submit" value="Guardar">
+            </form>
+        </div>
+    </div>
+</div>
